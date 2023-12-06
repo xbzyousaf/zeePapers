@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .sidebar {
+            width: 150px;
+            height: 100vh;
+            background-color: #f2f3f7;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0.6em 0.6em 1.2em #d2dce9, -0.5em -0.5em 1em #ffffff;
+            align-items: center;
+            transition: width 0.3s ease;
+            overflow-x: hidden;
+        }
+
+
+        .toggle-btn {
+            font-size: 1.5rem;
+            cursor: pointer;
+            margin-top: 10px;
+            color: #232323;
+        }
+
+        .sidebar-items {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            transition: width 0.3s ease;
+            margin-right: 0;
+            /* Initial margin */
+        }
+
+        .sidebar-items a {
+            text-decoration: none;
+            color: #232323;
+            margin: 10px 0;
+            display: flex;
+            align-items: right;
+            align-self: right;
+        }
+
+        .sidebar-items .text {
+            margin-left: 10px;
+            transition: opacity 0.3s ease;
+        }
+
+        .collapsed {
+            width: 80px;
+        }
+
+        .collapsed .sidebar-items .text {
+            visibility: hidden;
+        }
+
+        .sidebar img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            box-shadow: 0.6em 0.6em 1.2em #d2dce9, -0.5em -0.5em 1em #ffffff;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 767px) {
+           .sidebar img{
+            height: 40%;
+            width: 80%;
+           }          
+        }
+        @media (max-width: 767px) {
+            .collapsed .sidebar-items .text {
+            visibility: hidden !important;
+        }      
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    <title>Your Website</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="sidebar">
+            <div class="img">
+                <img src="assets/images/team2.jpg" alt="Your Logo">
+            </div>
+            
+            <div class="toggle-btn" onclick="toggleSidebar()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="sidebar-items">
+                <div class="row">
+                    <a href="" title="Home">
+                        <i class="fas fa-home"></i>
+                        <span class="text">Home</span>
+                    </a>
+                    <a href="" title="Papers">
+                        <i class="fas fa-file-alt"></i>
+                        <span class="text">Papers</span>
+                    </a>
+                    <a href="" title="Papers">
+                        <i class="fas fa-file-alt"></i>
+                        <span class="text">New</span>
+                    </a>
+                    <a href="" title="Papers">
+                        <i class="fas fa-file-alt"></i>
+                        <span class="text">Profile</span>
+                    </a>
+                </div>
+                <!-- Add more items as needed -->
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const sidebarIcons = document.querySelector('.sidebar-items');
+            sidebar.classList.toggle('collapsed');
+            sidebarIcons.style.marginRight = sidebar.classList.contains('collapsed') ? '-52px' : '0';
+        }
+    </script>
+</body>
+
+</html>
