@@ -19,15 +19,6 @@
     color: #36187d;
   }
   
-  .input-box form input {
-    width: 100%;
-    border-radius: 6px;
-    padding: 0 40px 0 15px;
-    border: 0px;
-    height: 45px;
-    font-size: 14px;
-    color: #4F4F4F;
-  }
   .input-box form button {
     width: 100%;
     border-radius: 6px;
@@ -37,7 +28,7 @@
     font-size: 14px;
   }
   .input-box form textarea {
-    margin-left: 1%;
+    /* margin-left: 1%; */
     width: 100%;
     border-radius: 6px;
     padding: 0 40px 0 15px;

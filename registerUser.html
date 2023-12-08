@@ -1,22 +1,29 @@
-<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-<!-- <link rel="stylesheet" href="assets/theme/css/style.css"> -->
-<link rel="stylesheet" href="assets/theme/css/registerUser.css">
-<link rel="preload" href="https://fonts.googleapis.com/css?family=Bellota+Text:300,300i,400,400i,700,700i&display=swap"
-    as="style" onload="this.onload=null;this.rel='stylesheet'">
+<!DOCTYPE html>
+<html lang="en">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<title>Register User</title>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/images/zee_papers_favicon.png" type="image/x-icon">
+    <title>Register User</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/theme/css/registerUser.css">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Bellota+Text:300,300i,400,400i,700,700i&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
 
-<section class="testimonials1 cid-svGOzp5ABzz" id="testimonials01-5" style="background-color: #f2f3f7; height: 100% !important;">
-    <div class="row">
-        
-        <div class="col-2"></div>
+<body style="height: 100% !important; background-color: #f2f3f7;">
+
+    <section class="testimonials1 cid-svGOzp5ABzz" id="testimonials01-5">
+        <div class="row">
+            <div class="col-2"></div>
             <div class="card-wrapper col-8 mt-4">
-                <div class="comments pt-4" style="background-color: #f2f3f7;">
-
+                <div class="comments pt-4">
                     <div class="input-box" id="">
 
-                        <form id="" class="" action="" method="post">
+                        <form id="registerUserForm" class="" action="login.html" method="post">
                             <div class="input-container">
                                 <h3 class="mbr-section-title mbr-fonts-style mb-4 display-2"
                                     style="padding-top: 0px !important; text-align: center;">
@@ -24,52 +31,51 @@
                                 </h3>
                                 <div class="row">
                                     <div class="col-md-12 col-lg-6">
-                                        <input id="nameInput" placeholder="Name" value=""
-                                    class="form-control mt-3 nameInput" required title="Name" />
+                                        <input id="nameInput" name="name" placeholder="Name" value=""
+                                            class="form-control mt-3 nameInput" title="Name" />
                                     </div>
                                     <div class="col-md-12 col-lg-6">
-                                        <input id="userInput" placeholder="Username" value=""
-                                    class="form-control mt-3 userInput" required title="Username" />
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12 col-lg-6">
-                                        <input id="emailInput" placeholder="Email" value=""
-                                        class="form-control mt-3 emailInput" required title="Email" />
+                                        <input id="userInput" name="username" placeholder="Username" value=""
+                                            class="form-control mt-3 userInput" title="Username" />
                                     </div>
                                     <div class="col-md-12 col-lg-6">
-                                        <input id="phoneInput" placeholder="Phone Number" value=""
-                                    class="form-control mt-3 phoneInput" title="Phone Number" />
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12 col-lg-6">
-                                        <input id="passwordInput" placeholder="Password" value=""
-                                        class="form-control mt-3 passwordInput" required title="Password" />
+                                        <input type="email" id="emailInput" name="email" placeholder="Email" value=""
+                                            class="form-control mt-3 emailInput" title="Email" />
                                     </div>
                                     <div class="col-md-12 col-lg-6">
-                                        <input id="confirmPassowrdInput" type="password" placeholder="Confirm Password" value=""
-                                        class="form-control mt-3 confirmPassowrdInput" required title="Confirm Password" />
+                                        <input id="phoneInput" name="phone" placeholder="Phone Number" value=""
+                                            class="form-control mt-3 phoneInput" title="Phone Number" />
                                     </div>
-                                </div>
-                                <div class="row">
+                                    <div class="col-md-12 col-lg-6">
+                                        <input id="passwordInput" name="password" placeholder="Password" value=""
+                                        type="password" class="form-control mt-3 passwordInput" title="Password" />
+                                    </div>
+                                    <div class="col-md-12 col-lg-6">
+                                        <input id="confirmPasswordInput" name="confirmPassword"
+                                            type="password" placeholder="Confirm Password" value=""
+                                            class="form-control mt-3 confirmPasswordInput" title="Confirm Password" />
+                                    </div>
                                     <div class="col-12">
-                                        <input id="addressInput" type="password" placeholder="Address" value=""
-                                        class="form-control mt-3 addressInput" title="Address"/>
+                                        <input id="addressInput" name="address" type="text"
+                                            placeholder="Address" value="" class="form-control mt-3 addressInput"
+                                            title="Address" />
                                     </div>
-                                </div>
-                                <div class="row pb-4">
                                     <div class="col-12">
-                                        <button class="form-control mt-3 btn btn-primary ">Register</button>
+                                        <button type="submit" class="form-control mt-3 btn btn-primary ">Register</button>
                                     </div>
                                 </div>
-                                
                             </div>
-
                         </form>
                     </div>
                 </div>
             </div>
             <div class="col-2"></div>
-    </div>
-</section>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="assets/Validations/validateRegisterUser.js"></script>
+</body>
+
+</html>
