@@ -1,0 +1,3 @@
+const ENDPOINTS = {
+    ResetPassword :'resetPassword',
+}
