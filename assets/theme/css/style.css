@@ -1,14 +1,16 @@
 @charset "UTF-8";
 section {
-  background-color: #ffffff;
+  background-color: #f2f3f7;
 }
 
 body {
   font-style: normal;
-  line-height: 1.5;
+  line-height: 1;
   font-weight: 400;
   color: #232323;
   position: relative;
+  background-color: #f2f3f7 !important;
+   height: 100% !important;
 }
 
 section,

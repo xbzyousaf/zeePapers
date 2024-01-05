@@ -9,17 +9,11 @@ $(document).ready(function () {
             password: { required: "Enter Password", minlength: "Password must be at least 5 characters long." }
         },
         errorElement: "small",
-        errorPlacement: function (error, element) {
-            // Remove the existing error message container
-            $("#" + element.attr("id") + "-error").remove();
-            error.addClass("text-danger");
-            // Append the error message above the input field
-            error.insertAfter(element);
-        },
         submitHandler: function (form) {
             var data = LoginForm.serializeObject($(form));
+            const baseUrl = ENV.getBaseURL() + ENDPOINTS.Login;
             $.ajax({
-                url: 'http://localhost:8000/api/login',
+                url: baseUrl,
                 headers: {
                     'Accept': 'application/json'
                 },
@@ -28,20 +22,16 @@ $(document).ready(function () {
                 success: function (response) {
                     window.location.href = 'myPapers.html';
                 },
-                error: function (xhr, status, error) {
-                    // Handle server-side validation errors
+                error: function (xhr) {
                     var responseJSON = xhr.responseJSON;
                     if (responseJSON && responseJSON.errors) {
+                        $(".error-message").remove();
                         $.each(responseJSON.errors, function (key, value) {
-                            // Find the input field by name and append the error message
+                            // Find the input field by name and append
                             var inputField = $('[name="' + key + '"]');
-                            var errorMessage = $('<small class="error-message">' + value + '</small>');
-                            // Check if the error is related to the password
-                            if (key == 'password') {
-                                errorMessage.insertAfter(inputField);
-                            } else {
-                                errorMessage.insertAfter(inputField);
-                            }
+                            var errorMessage = $('<small class="error-message" id="' + key + '-error">' + value + '</small>');
+                            // insert error after input
+                            errorMessage.insertAfter(inputField);
                         });
                     }
                 }

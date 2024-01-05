@@ -16,11 +16,7 @@ $(document).ready(function(){
             },
         },
         errorElement: "small",
-        errorPlacement: function (error, element) {
-            $("#" + element.attr("id") + "-error").remove();
-            error.addClass("text-danger");
-            error.insertAfter(element);
-        },
+      
         submitHandler: function (form) {
             var data = NewPassowrd.serializeObject($(form));
             const baseUrl = ENV.getBaseURL() + ENDPOINTS.ResetPassword;
@@ -32,7 +28,7 @@ $(document).ready(function(){
                 type: "POST",
                 data: data,
                 success: function (response) {
-                    // $("#successMessage").text("Password changed").show();
+                    $(".error-message").remove();
                     $("#headingNewPassword").text("Password changed").addClass("text-success");
                     $("#loginButton").show();
                     $("#tokenInput").hide();
@@ -43,7 +39,14 @@ $(document).ready(function(){
                 error: function (xhr) {
                     var responseJSON = xhr.responseJSON;
                     if (responseJSON && responseJSON.errors) {
-                        displayErrors(responseJSON.errors);
+                        $(".error-message").remove();
+                        $.each(responseJSON.errors, function (key, value) {
+                            // Find the input field by name and append
+                            var inputField = $('[name="' + key + '"]');
+                            var errorMessage = $('<small class="error-message" id="' + key + '-error">' + value + '</small>');
+                            // insert error after input
+                            errorMessage.insertAfter(inputField);
+                        });
                     }
                 }
             });

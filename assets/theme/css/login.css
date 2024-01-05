@@ -1,18 +1,4 @@
 
-  .cid-svGOzp5ABzz .mbr-text {
-    color: #6c758f;
-  }
-  .cid-svGOzp5ABzz .name {
-    color: #36187d;
-  }
-  .cid-svGOzp5ABzz .position {
-    color: #6c758f;
-  }
-
-  .cid-svGOzp5ABzz .mbr-section-title {
-    color: #36187d;
-  }
-  
   .input-box form input {
     width: 100%;
     border-radius: 6px;
@@ -50,9 +36,6 @@
   .display-2 > .mbr-iconfont {
     font-size: 3.5rem;
   }
-    /* Add this style to position the error messages */
-    .error-message {
+    .error {
         color: red;
-        margin-top: -15px;
-        margin-bottom: 15px;
     }
