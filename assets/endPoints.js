@@ -3,4 +3,5 @@ const ENDPOINTS = {
     Login :'login',
     SendEmailForReset :'sendEmailForReset',
     UpdateProfile :'updateProfile',
+    Comments :'comments',
 }

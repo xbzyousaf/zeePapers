@@ -17,11 +17,29 @@ errorElement:"small",
         error.addClass('ml-3');
         error.appendTo(element.parent());
     },
-    submitHandler:function(form){
-        var Data=$(form).serialize();
-        console.log(Data);
-        // form.submit();
-    },
+    errorElement: "small",
+      
+        submitHandler: function (form) {
+            var data = GetFormData.serializeObject($(form));
+            const baseUrl = ENV.getBaseURL() + ENDPOINTS.Comments;
+            $.ajax({
+                url: baseUrl,
+                headers: {
+                    'Accept': 'application/json'
+                },
+                type: "POST",
+                data: data,
+                success: function (response) {
+                    window.location.href = 'papers.html';
+                },
+                error: function (xhr) {
+                    var responseJSON = xhr.responseJSON;
+                    if (responseJSON && responseJSON.errors) {
+                        FormError.showErrorMessages(responseJSON.errors);
+                    }
+                }
+            });
+        },
 
 });
 });

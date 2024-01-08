@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    
     $("#loginForm").validate({
         rules: {
             email: { required: true, },
@@ -8,9 +9,10 @@ $(document).ready(function () {
             email: { required: "Enter email" },
             password: { required: "Enter Password", minlength: "Password must be at least 5 characters long." }
         },
+        
         errorElement: "small",
         submitHandler: function (form) {
-            var data = LoginForm.serializeObject($(form));
+            var data = GetFormData.serializeObject($(form));
             const baseUrl = ENV.getBaseURL() + ENDPOINTS.Login;
             $.ajax({
                 url: baseUrl,
@@ -25,35 +27,11 @@ $(document).ready(function () {
                 error: function (xhr) {
                     var responseJSON = xhr.responseJSON;
                     if (responseJSON && responseJSON.errors) {
-                        $(".error-message").remove();
-                        $.each(responseJSON.errors, function (key, value) {
-                            // Find the input field by name and append
-                            var inputField = $('[name="' + key + '"]');
-                            var errorMessage = $('<small class="error-message" id="' + key + '-error">' + value + '</small>');
-                            // insert error after input
-                            errorMessage.insertAfter(inputField);
-                        });
+                        FormError.showErrorMessages(responseJSON.errors);
                     }
                 }
             });
         },
     });
 
-    const LoginForm = {
-        serializeObject: function (form) {
-            config = {};
-            form.serializeArray().map(function (item) {
-                if (config[item.name]) {
-                    if (typeof (config[item.name]) === "string") {
-                        config[item.name] = [config[item.name]];
-                    }
-                    config[item.name].push(item.value);
-                } else {
-                    config[item.name] = item.value;
-                }
-            });
-
-            return config;
-        }
-    };
 });
