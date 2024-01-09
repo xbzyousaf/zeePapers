@@ -18,7 +18,7 @@
 
 <body >
 
-    <section class="testimonials1 cid-svGOzp5ABzz">
+    <section class="testimonials1 cid-svGOzp5ABzz container">
         <div class="row">
             <div class="col-2  leftDiv">
                 <!-- <iframe src="sidebar.html" height="200%" frameborder="0"></iframe> -->
@@ -28,7 +28,7 @@
                         <strong >Register User</strong>
                     </h4>
                     <div class="input-box" id="">
-                            <form id="updateProfile" class="updateProfile">
+                            <form id="registerUserForm" class="registerUserForm">
                                 <div class="input-container">
                                     
                                     <div class="row">
@@ -42,19 +42,19 @@
                                         </div>
                                         <div class="col-md-12 col-lg-6">
                                             <input id="emailInput" name="email" placeholder="Email" value=""
-                                            class="form-control mt-3 emailInput" title="Email" />
+                                            class="form-control mt-3 emailInput" title="Email" type="email"/>
                                         </div>
                                         <div class="col-md-12 col-lg-6">
                                             <input id="phoneInput" name="phone" placeholder="Phone Number" value=""
                                         class="form-control mt-3 phoneInput" title="Phone Number" />
                                         </div>
                                         <div class="col-md-12 col-lg-6">
-                                            <input id="passwordInput" name="password" placeholder="Password Number" value=""
-                                        class="form-control mt-3 passwordInput" title="Password" />
+                                            <input id="passwordInput" name="password" placeholder="Password" value=""
+                                        class="form-control mt-3 passwordInput" title="Password" type="password"/>
                                         </div>
                                         <div class="col-md-12 col-lg-6">
                                             <input id="confirmPasswordInput" name="confirm_password" placeholder="Confirm Password" value=""
-                                        class="form-control mt-3 confirmPasswordInput" title="Confirm Password" />
+                                        class="form-control mt-3 confirmPasswordInput" title="Confirm Password" type="password" />
                                         </div>
                                         <div class="col-12">
                                             <input id="addressInput" name="address" placeholder="Address" value=""
@@ -62,7 +62,7 @@
                                         </div>
                                     </div>
                                     
-                                            <button type="submit" class="btn btn-primary mt-3">Update</button>
+                                            <button type="submit" class="btn btn-primary mt-3">Register</button>
                                     
                                 </div>
     
@@ -74,10 +74,13 @@
 </section>
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="assets/Validations/jquery.validate.min.js"></script>
     <script src="assets/Validations/validateRegisterUser.js"></script>
     <script src="assets/env.js"></script>
     <script src="assets/endPoints.js"></script>
+    <script src="assets/utility/formError.js"></script>
+    <script src="assets/utility/getFormData.js"></script>
+    <script src="assets/userInfo.js"></script>
 </body>
 
 </html>
