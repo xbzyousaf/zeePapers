@@ -25,7 +25,7 @@
                         <strong >Update Profile</strong>
                     </h4>
                     <div class="input-box" id="">
-                            <form id="updateProfile" class="updateProfile">
+                            <form id="updateProfile" name="updateProfile" class="updateProfile">
                                 <div class="input-container">
                                     
                                     <div class="row">
@@ -39,7 +39,7 @@
                                         </div>
                                         <div class="col-md-12 col-lg-6">
                                             <input id="emailInput" name="email" placeholder="Email" value=""
-                                            class="form-control mt-3 emailInput" title="Email" />
+                                            class="form-control mt-3 emailInput" title="Email" type="email"/>
                                         </div>
                                         <div class="col-md-12 col-lg-6">
                                             <input id="phoneInput" name="phone" placeholder="Phone Number" value=""
@@ -62,10 +62,13 @@
         </div>
 </section>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
-<script src="assets/env.js"></script>
-    <script src="assets/endPoints.js"></script>
+    <script src="assets/Validations/jquery.validate.min.js"></script>
     <script src="assets/Validations/validateUpdateProfile.js"></script>
+    <script src="assets/env.js"></script>
+    <script src="assets/endPoints.js"></script>
+    <script src="assets/utility/formError.js"></script>
+    <script src="assets/utility/getFormData.js"></script>
+    <script src="assets/userInfo.js"></script>
 </body>
 
 </html>
