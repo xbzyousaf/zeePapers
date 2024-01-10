@@ -10,36 +10,10 @@
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/theme/css/publishPaper.css">
     <link rel="stylesheet" href="assets/theme/css/cid-svGOzp5ABzz.css">
-    <link rel="preload" href="https://fonts.googleapis.com/css?family=Bellota+Text:300,300i,400,400i,700,700i&display=swap"
-        as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <meta charset="utf-8">
+    <link rel="preload" href="assets/font/fontFamily.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-    
-    <!-- TinyMCE CDN -->
-    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
-    
-    <script>
-      tinymce.init({
-        selector: 'textarea#editor',
-      });
-    </script>
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
-
-<script>
-  tinymce.init({
-    selector: 'textarea#editor',
-    skin: 'bootstrap',
-    plugins: 'lists, link, image, media',
-    toolbar: 'h1 h2 bold italic strikethrough blockquote bullist numlist backcolor | link image media | removeformat help',
-    menubar: false,
-  });
-</script>
-<!-- <script src="https://cdn.tiny.cloud/1/687h59t2rwfdy0ri60knfdo9w05vcbjbjeh38i6mpt19zzul/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script> -->
 </head>
 
 <body style="background-color: #f2f3f7; ">
@@ -52,7 +26,7 @@
             <div class="card-wrapper col-8 mt-2">
                 <div class="comments pt-4" style="background-color: #f2f3f7;">
                     <div class="input-box" id="">
-                        <form id="" class="" action="" method="post">
+                        <form id="publishPaper" name="publishPaper" class="publishPaper" action="" method="post">
                             <div class="input-container">
                                 <h3 class="mbr-section-title mbr-fonts-style mb-4 display-2"
                                     style="padding-top: 0px !important; text-align: center;">
@@ -60,25 +34,16 @@
                                 </h3>
                              
                                 <div class="row pb-4">
-                                    <div class="col-12">
-                                        <!-- <script class="inline">
-                                            tinymce.init({
-                                              selector: 'textarea',
-                                              plugins: 'ai tinycomments mentions anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed permanentpen footnotes advtemplate advtable advcode editimage tableofcontents mergetags powerpaste tinymcespellchecker autocorrect a11ychecker typography inlinecss',
-                                              toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | align lineheight | tinycomments | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
-                                              tinycomments_mode: 'embedded',
-                                              tinycomments_author: 'Author name',
-                                              mergetags_list: [
-                                                { value: 'First.Name', title: 'First Name' },
-                                                { value: 'Email', title: 'Email' },
-                                              ],
-                                              ai_request: (request, respondWith) => respondWith.string(() => Promise.reject("See docs to implement AI Assistant")),
-                                            });
-                                          </script>
-                                          <textarea>
-                                            
-                                          </textarea> -->
-                                        <textarea id="editor"></textarea> 
+                                    <div class="col-md-12 col-lg-6 mt-2">
+                                        <input id="titleInput" name="title" placeholder="Title" value=""
+                                    class="form-control mt-3 titleInput" title="Title" />
+                                    </div>
+                                    <div class="col-md-12 col-lg-6 mt-2 mb-2">
+                                        <input id="imageInput" type="file" name="image" placeholder="Image" 
+                                    class="form-control mt-3 imageInput" title="Image" />
+                                    </div>
+                                    <div class="col-12 mt-2">
+                                        <textarea id="content" name="content" rows="10" cols="10" title="Content" placeholder="Content"></textarea> 
                                     </div>
                                     <div class="col-12 mt-3">
                                         <button class="btn btn-primary">Publish</button>
@@ -95,13 +60,14 @@
     </section>
 
 </body>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.6.0/umd/popper.min.js" integrity="sha512-BmM0/BQlqh02wuK5Gz9yrbe7VyIVwOzD1o40yi1IsTjriX/NGF37NyXHfmFzIlMmoSIBXgqDiG1VNU6kB5dBbA==" crossorigin="anonymous"></script>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="assets/jquery/jquery-3.6.4.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/Validations/jquery.validate.min.js"></script>
+    <script src="assets/Validations/validatePublishPaper.js"></script>
     <script src="assets/env.js"></script>
     <script src="assets/endPoints.js"></script>
-    <script src="assets/Validations/validateLogin.js"></script>
+    <script src="assets/utility/formError.js"></script>
+    <script src="assets/utility/getFormData.js"></script>
+    <script src="assets/userInfo.js"></script>
 
 </html>
