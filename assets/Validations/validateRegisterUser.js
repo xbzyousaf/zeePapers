@@ -58,7 +58,6 @@ $(document).ready(function () {
         UserInfo.RemoveToken();
         UserInfo.SetToken(response.data);
         getAndSetPersonalInfo();
-        console.log(UserInfo.GetUser());
     }
 
     function getAndSetPersonalInfo() {
@@ -84,7 +83,6 @@ $(document).ready(function () {
         UserInfo.RemoveUser();
         UserInfo.SetUser(JSON.stringify(response.data));
         var user = UserInfo.GetUser();
-        console.log(user);
         window.location.href = 'myPapers.html';
     }
 });

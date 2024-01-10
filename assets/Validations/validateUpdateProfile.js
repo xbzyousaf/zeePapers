@@ -24,7 +24,6 @@ $(document).ready(function () {
         errorElement: "small",
         submitHandler: function (form) {
             var user =JSON.parse(UserInfo.GetUser());
-            console.log(user);
             var data = GetFormData.serializeObject($(form));
             data.id = user.id;
                 
@@ -51,9 +50,7 @@ $(document).ready(function () {
         },
     });
     function getAndPopulateUserInfo() {
-        // var userData = ;
         var userData = JSON.parse(UserInfo.GetUser());
-        console.log(userData);
         $('#updateProfile').find('input[name="name"]').val(userData.name);
         $('#updateProfile').find('input[name="username"]').val(userData.username);
         $('#updateProfile').find('input[name="email"]').val(userData.email);

@@ -18,7 +18,6 @@ $(document).ready(function () {
 
         submitHandler: function (form) {
             var data = GetFormData.serializeObject($(form));
-            console.log(data);
             const baseUrl = ENV.getBaseURL() + ENDPOINTS.Articles;
             $.ajax({
                 url: baseUrl,
@@ -28,7 +27,6 @@ $(document).ready(function () {
                 type: "POST",
                 data: data,
                 success: function (response) {
-                    console.log(response);
                 },
                 error: function (xhr) {
                     var responseJSON = xhr.responseJSON;
