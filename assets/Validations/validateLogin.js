@@ -12,7 +12,7 @@ $(document).ready(function () {
         
         errorElement: "small",
         submitHandler: function (form) {
-            var data = GetFormData.serializeObject($(form));
+            var data = FormDataWithoutImage.serializeObject($(form));
             const baseUrl = ENV.getBaseURL() + ENDPOINTS.Login;
             $.ajax({
                 url: baseUrl,
@@ -22,7 +22,7 @@ $(document).ready(function () {
                 type: "POST",
                 data: (data),
                 success: function (response) {
-                    window.location.href = 'myPapers.html';
+                    handleLoginSuccess(response.data);
                 },
                 error: function (xhr) {
                     var responseJSON = xhr.responseJSON;
@@ -33,5 +33,37 @@ $(document).ready(function () {
             });
         },
     });
+    function handleLoginSuccess(response) {
+        UserInfo.RemoveToken();
+        UserInfo.SetToken(response.token);
+        getAndSetPersonalInfo();
+    }
+    function getAndSetPersonalInfo() {
+        const baseUrl = ENV.getBaseURL() + ENDPOINTS.PersonelInfo;
+        
+        $.ajax({
+            url: baseUrl,
+            headers: {
+                'Accept': 'application/json',
+                'Authorization': 'Bearer ' + UserInfo.GetToken(),
+            },
+            type: "GET",
+            data:'',
+            success: function (response) {
+                handlePersonalInfoSuccess(response);
+            },
+            error: function (xhr) {
+                var responseJSON = xhr.responseJSON;
+                    if (responseJSON && responseJSON.errors) {
+                        FormError.showErrorMessages(responseJSON.errors);
+                    }
+            }
+        });
+    }
+    function handlePersonalInfoSuccess(response) {
+        UserInfo.RemoveUser();
+        UserInfo.SetUser(JSON.stringify(response.data));
+        window.location.href = 'myPapers.html';
+    }
 
 });

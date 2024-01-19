@@ -1,97 +1,22 @@
 <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="assets/theme/css/style.css">
 <link rel="preload" href="assets/font/fontFamily.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<link rel="preload" as="style"
-    href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet"
-    href="assets/mobirise/css/mbr-additional.css" type="text/css">
+<link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css">
+<link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
 
 <div class="comments pt-4" style="background-color: #f2f3f7;">
-    
-<div class=" "  >
-    <script>
-        var comments = [
-            "Test comment 1",
-            "Test comment 1",
-            "Test comment 1",
-            "Test comment 1",
-            "Test comment 1",
-        ];
-        
-        parent.postMessage({ totalComments: comments.length }, '*');
-    </script>
-    <script>
-        for (var i = 0; i < comments.length; i++) {
-            document.write(`
-                <div class="comment-box mt-1" id="#elementId">
-                    <figure>
-                        <img height="45" width="45" src="assets/images/team1.jpg" alt="Profile photo"
-                            class="img-fluid" />
-                    </figure>
-                    <form id="commentForm${i}" class="">
-                        <div class="comment-container">
-                            <input id="commentInput${i}" readonly value="${comments[i]}"
-                                class="form-control auto_height commentInput${i}" />
-                        </div>
-                        <div class="ml-4">
-                            <a href>Like</a>
-                            <a href class="m-2">Reply</a>
-                            <i class="m-2">02-02-2022</i>
-                        </div>
-                    </form>
-                </div>
-            `);
-        }
-    </script>
-    
+
+    <div class="comment-container">
+
+    </div>
 
 </div>
 
-</div>
-<script>
-    function auto_height(elem) {
-        elem.style.height = '1px';
-        elem.style.height = `${elem.scrollHeight}px`;
-    }
-    document.addEventListener('DOMContentLoaded', function () {
-        var commentInput = document.getElementById('commentInput');
-        var commentToggle = document.querySelector('.comment-toggle');
-
-        // Check initial text length
-        toggleCommentVisibility(commentInput.value.length);
-
-        // Add input event listener to check text length dynamically
-        commentInput.addEventListener('input', function () {
-            toggleCommentVisibility(this.value.length);
-        });
-    });
-
-    function toggleCommentVisibility(textLength) {
-        var commentToggle = document.querySelector('.comment-toggle');
-        var commentInput = document.getElementById('commentInput');
-
-        if (textLength > 100) {
-            commentToggle.style.display = 'block';
-            commentInput.style.height = '50px';
-            commentToggle.textContent = '..More';
-        } else {
-            commentToggle.style.display = 'none';
-        }
-
-        adjustIframeHeight();
-    }
-
-    function toggleComment() {
-        var commentInput = document.getElementById('commentInput');
-        var commentToggle = document.querySelector('.comment-toggle');
-
-        if (commentInput.style.height === '50px') {
-            commentInput.style.height = '110px';
-            commentToggle.textContent = '..Less';
-        } else {
-            commentInput.style.height = '50px';
-            commentToggle.textContent = '..More';
-        }
-
-        adjustIframeHeight();
-    }
-</script>
+<script src="assets/jquery/jquery-3.6.4.min.js"></script>
+<script src="assets/Validations/jquery.validate.min.js"></script>
+<script src="assets/Validations/validateCommentBox.js"></script>
+<script src="assets/env.js"></script>
+<script src="assets/endPoints.js"></script>
+<script src="assets/utility/formError.js"></script>
+<script src="assets/utility/serializeFormData.js"></script>
+<script src="assets/userInfo.js"></script>

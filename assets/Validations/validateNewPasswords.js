@@ -18,7 +18,7 @@ $(document).ready(function(){
         errorElement: "small",
       
         submitHandler: function (form) {
-            var data = GetFormData.serializeObject($(form));
+            var data = FormDataWithoutImage.serializeObject($(form));
             const baseUrl = ENV.getBaseURL() + ENDPOINTS.ResetPassword;
             $.ajax({
                 url: baseUrl,

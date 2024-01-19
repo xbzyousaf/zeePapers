@@ -8,10 +8,10 @@
 <div class="comments pt-4" style="background-color: #f2f3f7;">
 
     
-<div class="row commentShareBtn" style="margin-top: -20px;">
+<div class="row like-container" style="margin-top: -20px;">
     
     <div class="col-5 align-left">
-        <a href>
+        <a href="#" id="likeBtn">
             <i class="fa fa-thumbs-up m-2"
                 aria-hidden="true"></i>
         </a>
@@ -24,12 +24,19 @@
                 aria-hidden="true"></i>
         </a>
     </div>
-    <div class="col-7 align-right">
-        <a>412 Like</a>,
-        <a>90 Comment</a>,
-        <a>12 Share</a>
+    <div class="col-7 align-right like-container">
+        <a href="#" class="totalLikes"> </a>,
+        <a href="#" class="totalComments"></a>
 
     </div>
     <hr>
 </div>
 </div>
+    <script src="assets/jquery/jquery-3.6.4.min.js"></script>
+    <script src="assets/Validations/jquery.validate.min.js"></script>
+    <script src="assets/Validations/validateCommentShareBtn.js"></script>
+    <script src="assets/env.js"></script>
+    <script src="assets/endPoints.js"></script>
+    <script src="assets/utility/formError.js"></script>
+    <script src="assets/utility/serializeFormData.js"></script>
+    <script src="assets/userInfo.js"></script>

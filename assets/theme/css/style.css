@@ -1055,5 +1055,8 @@ margin-bottom: 2rem;
 .auto_height { /* CSS */
   width: 100%;
 }
+#success-container{
+  margin-left: 13px !important;
+}
 
 

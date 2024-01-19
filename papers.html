@@ -17,25 +17,7 @@
         <link rel="stylesheet" href="assets/theme/css/style.css">
         <link rel="preload" href="assets/font/fontFamily.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-            <script>
-                window.addEventListener('message', function (event) {
-                    if (event.data.totalComments !== undefined) {
-                        var totalComments = event.data.totalComments;
-                        var iframe = parent.document.querySelector('.paperCommentBox');
-                        var iframeHeight='auto';
-                        // Adjust the iframe height based on the number of comments
-                        if(totalComments == 1) iframeHeight = '116px';
-                        else if(totalComments == 2) iframeHeight = '208px';
-                        else if(totalComments == 3) iframeHeight = '300px';
-                        else if(totalComments == 4) iframeHeight = '392px';
-                        else {iframeHeight = '484px'; }
-    
-                        iframe.style.height = iframeHeight;
-            
-                    }
-                });
-            </script>
-            
+        
         </head>
     <body style="background-color: #f2f3f7;" >
        
@@ -56,17 +38,16 @@
                                 style="padding-top: 0px !important;">
                                 <p class>Research Papers</p>
                             </h3>
-                                <h1>Measuring protocol sharing: are we on the right
-                                    track?</h1>
+                                <h1 class="paperTitle"></h1>
     
                                 <div class="img-item mb-3">
-                                    <img src="assets/images/features1.jpg" alt
+                                    <img src="" alt="image" class="articleImage"
                                         style="height: 320px; width: 600; object-fit: cover;">
                                 </div>
     
                                 <h6
-                                    class="item-subtitle mbr-fonts-style mb-1 display-7 align-right">
-                                    <strong>15.06.21</strong>
+                                    class="item-subtitle paperDate mbr-fonts-style mb-1 display-7 align-right">
+                                    <strong></strong>
                                 </h6>
     
                                 <div class="d-flex mb-md-0 mb-4">
@@ -75,11 +56,10 @@
                                             alt="Mobirise">
                                     </div>
                                     <div class="text-wrapper">
-                                        <p
-                                            class="name mbr-fonts-style mb-1 display-7">
-                                            <strong>Martin Smith
-                                            </strong>
+                                        <strong>
+                                        <p class="publisherName mbr-fonts-style mb-1 display-7">
                                         </p>
+                                        </strong>
                                         <p
                                             class="position mbr-fonts-style display-4">
                                             <strong>Publisher</strong>
@@ -87,84 +67,23 @@
                                     </div>
                                 </div>
     
-                                <p
-                                    class="mbr-text align-left mbr-fonts-style mb-4 display-7">
-                                    <strong>
-                                        For almost a year, Open Science Indicators
-                                        have offered the ability to measure three
-                                        Open Science practices: data sharing, code
-                                        sharing, and preprint posting.
-                                        Now, PLOS and DataSeer are adding a fourth
-                                        indicator for protocol sharing. As we expand
-                                        the tool’s capabilities, we invite your
-                                        feedback on the approach we’ve taken in this
-                                        preliminary data release.
-                                    </strong>
-                                    <h2 class="mt-2">What is a protocol?</h2>
-    
-                                    The word protocol means different things in
-                                    different fields, so first we want to clearly
-                                    signal what types of research output are
-                                    in scope for this indicator. In line with the
-                                    community-developed definition used in the
-                                    PRO-MaP recommendations,
-                                    we are defining protocol as “detailed and/or
-                                    step-by-step instructions for carrying out a
-                                    research procedure.” Clinical study protocols,
-                                    review protocols, registered report protocols,
-                                    and other protocols describing a study that will
-                                    take place in the future generally do not meet
-                                    this definition,
-                                    although we’re currently scoping work on a fifth
-                                    indicator that is likely to include these
-                                    outputs.
-    
-                                    <h2 class="mt-3">How we got here</h2>
-    
-                                    In 2022, PLOS conducted a study of researcher
-                                    practices and priorities around sharing detailed
-                                    methods information including protocols. The
-                                    study found that, while methods sections of
-                                    research articles are regarded as adequate for
-                                    evaluating study findings, they are not widely
-                                    perceived as adequate for reproducing results or
-                                    reusing a method in a different context.
-                                    To ensure that methods information is usable for
-                                    a range of research tasks, study participants
-                                    reported publicly sharing protocols through
-                                    channels including peer-reviewed publications,
-                                    supplementary information, dedicated
-                                    repositories, and other websites.
-    
-                                    With these results in mind, we drafted a set of
-                                    requirements built on our OSI measurement
-                                    framework and consulted on them with
-                                    stakeholders including
-                                    tool providers, meta-researchers, and other
-                                    methods experts. We then worked with DataSeer to
-                                    operationalize the requirements. Our current
-                                    approach detects links to or citations of
-                                    outputs from an allowlist of publications and
-                                    repositories known to focus on protocols. In
-                                    keeping with our approach to measuring data and
-                                    code sharing, we also detect relevant metadata
-                                    from supplementary information where available.
-                                    Please consult our methods documentation for
-                                    more detail.
+                                <p class="mbr-text paperContent align-left mbr-fonts-style mb-4 display-7">
+                                    
+                                </p>
                                    
                                     
     
                                     <hr>
-                                    <iframe src="commentShareBtn.html" name="targetframe" allowTransparency="true" 
+                                    <iframe id="commentShareBtnFrame" src="commentShareBtn.html" name="commentShareBtnFrame" allowTransparency="true" 
                                     scrolling="no" frameborder="0" height="36px" class="userCommentBox">
                                     </iframe>
                                     <hr>
-                                    <iframe src="commentSender.html" name="targetframe" allowTransparency="true" 
+                                    <iframe src="commentSender.html" name="commentSenderFrame" allowTransparency="true" 
                                     scrolling="no" frameborder="0" height="90px" class="commentSender">
                                     </iframe>
                 
-                                    <iframe  src="commentBox.html" name="targetframe" allowTransparency="true" 
-                                     scrolling="yes" frameborder="0"  class="paperCommentBox">
+                                    <iframe  src="commentBox.html" name="commentBoxFrame" allowTransparency="true" 
+                                     scrolling="yes"  frameborder="0"  class="paperCommentBox">
                                     </iframe>
                                 </div>
     
@@ -255,12 +174,14 @@
         </div>
         <div class="col-md-2 col-sm-0"></div>
       </div>
+      <script src="assets/jquery/jquery-3.6.4.min.js"></script>
       <script src="assets/Validations/jquery.validate.min.js"></script>
-      <script src="assets/Validations/validateLogin.js"></script>
+      <script src="assets/Validations/validatePapers.js"></script>
       <script src="assets/env.js"></script>
       <script src="assets/endPoints.js"></script>
       <script src="assets/utility/formError.js"></script>
-      <script src="assets/utility/getFormData.js"></script>
+      <script src="assets/utility/serializeFormData.js"></script>
+      <script src="assets/userInfo.js"></script>
             
             
         </body>
