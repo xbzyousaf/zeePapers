@@ -4,7 +4,9 @@ const ENDPOINTS = {
     SendEmailForReset :'sendEmailForReset',
     UpdateProfile :'users',
     Comments :'comments',
+    Likes :'likes',
     RegisterUser :'users',
     PersonelInfo :'personalInfo',
     Articles :'articles',
+    Stats :'stats',
 }

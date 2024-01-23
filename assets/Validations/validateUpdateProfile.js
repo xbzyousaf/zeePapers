@@ -23,19 +23,27 @@ $(document).ready(function () {
         },
         errorElement: "small",
         submitHandler: function (form) {
+            var data = FormDataWithImage.serializeObject($(form));
+            // append _method=PUT for spoofing
+
+            data.append('_method', 'PUT');
+            console.log(data);
             var user =JSON.parse(UserInfo.GetUser());
-            var data = GetFormData.serializeObject($(form));
-            data.id = user.id;
+            data.append('id', user.id);
+
                 
             const baseUrl = ENV.getBaseURL() + ENDPOINTS.UpdateProfile +'/'+ user.id;
+            console.log(baseUrl);
             $.ajax({
                 url: baseUrl,
                 headers: {
-                    'Accept': 'application/json'
+                    'Accept': 'application/json',
+                    'Authorization': 'Bearer ' + UserInfo.GetToken(),
                 },
-                type: "PUT",
+                type: "POST",
                 data: data,
-                
+                contentType: false, // NEEDED, DON'T OMIT THIS (requires jQuery 1.6+)
+                processData: false, // NEEDED, DON'T OMIT THIS
                 success: function (response) {
                     updateSuccess(response.data);
                 },
@@ -45,6 +53,9 @@ $(document).ready(function () {
                         FormError.showErrorMessages(responseJSON.errors);
                     }
 
+                },
+                finally: function() {
+                    debugger;
                 }
             });
         },

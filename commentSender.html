@@ -14,12 +14,13 @@
                 alt="Profile photo"
                 class="img-fluid" />
         </figure>
-        <form id="commentSender" method="post" action="#"
+        <form id="commentSender"
             class="box-form-size-and-overflow inter-jameel-noori-no-rtl">
             <div class="row">
-                 <input name="commentSender" type="text"
-                class="form-control " id="nameInput">
-
+                 <input name="message" type="text"
+                class="form-control " id="messageInput">
+                <div id="success-container"></div>
+            </div>
             <button class="btn-send">
                 <img class="make-icon-to-cursor"
                     type="submit"
@@ -31,7 +32,7 @@
                     src="assets/images/send_icon_inactive.png"
                     alt="Send icon active">
             </button>
-            </div>
+           
            
 
         </form>
@@ -48,4 +49,6 @@
 <script src="assets/endPoints.js"></script>
 <script src="assets/env.js"></script>
 <script src="assets/utility/formError.js"></script>
-<script src="assets/utility/getFormData.js"></script>
+<script src="assets/utility/formSuccess.js"></script>
+<script src="assets/utility/serializeFormData.js"></script>
+<script src="assets/userInfo.js"></script>

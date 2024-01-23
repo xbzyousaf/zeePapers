@@ -17,16 +17,20 @@ $(document).ready(function () {
         errorElement: "small",
 
         submitHandler: function (form) {
-            var data = GetFormData.serializeObject($(form));
+            var data = FormDataWithImage.serializeObject($(form));
             const baseUrl = ENV.getBaseURL() + ENDPOINTS.Articles;
             $.ajax({
                 url: baseUrl,
                 headers: {
-                    'Accept': 'application/json'
+                    'Accept': 'application/json',
+                    'Authorization': 'Bearer ' + UserInfo.GetToken(),
                 },
                 type: "POST",
                 data: data,
+                contentType: false, // NEEDED, DON'T OMIT THIS (requires jQuery 1.6+)
+                processData: false, // NEEDED, DON'T OMIT THIS
                 success: function (response) {
+                    console.log(response);
                 },
                 error: function (xhr) {
                     var responseJSON = xhr.responseJSON;

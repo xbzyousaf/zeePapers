@@ -1,6 +1,7 @@
 const UserInfo = {
     key: 'token',
     user:'user',
+    paperId:'paper_id',
     SetToken:function(token) {
     sessionStorage.setItem(this.key, token);
     },
@@ -19,5 +20,14 @@ const UserInfo = {
     },
     RemoveUser:function() {
     sessionStorage.removeItem(this.user);
+    },
+    SetPaperId:function(id) {
+    sessionStorage.setItem(this.paperId, id);
+    },
+    GetPaperId:function() {
+    return sessionStorage.getItem(this.paperId);
+    },
+    RemovePaperId:function() {
+    sessionStorage.removeItem(this.paperId);
     }
 }

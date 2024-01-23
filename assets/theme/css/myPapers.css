@@ -47,4 +47,12 @@
     background-color: #f2f3f7;
   }
   
-  
+  .paper-image {
+    width: 100%; /* Adjust as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+.paper-image-container {
+  width: 100%; /* Set a fixed width */
+  height: 190px; /* Set a fixed height */
+  overflow: hidden; /* Ensure that images don't overflow */
+}
